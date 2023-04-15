@@ -1,4 +1,4 @@
-import { t } from '../trpc';
+import { adminProceedure, t } from '../trpc';
 import { z } from 'zod';
 import { userRouter } from './users';
 
@@ -11,4 +11,8 @@ export const appRouter = t.router({
     return true;
   }),
   users: userRouter,
+  secretData: adminProceedure.query(({ ctx }) => {
+    console.log(ctx.user);
+    return 'Top secret data boy !';
+  }),
 });

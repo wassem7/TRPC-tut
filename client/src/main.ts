@@ -12,10 +12,11 @@ const client = createTRPCProxyClient<AppRouter>({
 });
 
 async function main() {
-  const result = await client.users.updateUser.mutate({
-    userId: '23',
-    name: 'Wassem, Darkwa',
-  });
+  // const result = await client.users.updateUser.mutate({
+  //   userId: '23',
+  //   name: 'Wassem, Darkwa',
+  // });
+  const result = await client.secretData.query();
   console.log(result);
 }
 

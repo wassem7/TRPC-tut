@@ -3,6 +3,7 @@ import cors from 'cors';
 import { appRouter } from './routers';
 import { createExpressMiddleware } from '@trpc/server/adapters/express';
 import { createContext } from './context';
+
 const app = express();
 app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(
